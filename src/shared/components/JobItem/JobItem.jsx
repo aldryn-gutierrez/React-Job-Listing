@@ -1,51 +1,62 @@
 import React from 'react';
-import './JobItem.css'
+import './JobItem.css';
+import moment from 'moment';
 
-const JobItem = () => (
-  <div class="jobItem">
+const calculateHourDifference = (pastDatetime) => {
+    return Math.floor(
+      moment
+        .duration(moment().diff(moment(pastDatetime,"YYYY-MM-DD HH:mm:ss")))
+        .asHours()
+    );
+}
+
+const JobItem = ({ job }) => (
+  <div className="jobItem">
     <div>
-      <div class="jobTitle">
-        <span>Customer Service Representative -</span>
+      <div className="jobTitle">
+        <span>{ job.job_title }</span>
       </div>
-      <div class="jobSalary">
-        <span>&#8369;30k - &#8369;35k</span>
+      <div className="jobSalary">
+        <span>&#8369;{job.salary_range_from/1000}k - &#8369;{job.salary_range_to/1000}k</span>
       </div>
     </div>
     <div>
-      <div class="jobRequirements">
+      <div className="jobRequirements">
         <div>
           <i className="fas fa-map-marker-alt" />
-          <span style={{marginLeft: '16px'}}>Cebu City</span>
+          <span style={{marginLeft: '16px'}}>{ job.job_location }</span>
         </div>
         <div>
           <i className="fas fa-briefcase" />
-          <span>1 - 3 years</span>
+          <span>{ job.xp_lvl }</span>
         </div>
         <div>
           <i className="fas fa-graduation-cap" />
-          <span>Diploma</span>
+          <span>{ job.degree }</span>
         </div>
         <div>
           <i className="fas fa-clock" />
-          <span>Full Time</span>
+          <span>{ job.job_type }</span>
         </div>
       </div>
     </div>
-    <div class="companyDetails">
+    <div className="companyDetails">
       <div>
-        <div class="companyLogoContainer">
+        <div className="companyLogoContainer">
           <img 
-            src="https://sc02.alicdn.com/kf/HTB1sbqOdxsIL1JjSZFqq6AeCpXaH/Best-Selling-Product-Slotted-50x50-mm-Unistrut.jpg_50x50.jpg" 
+            height="50"
+            width="50"
+            src={job.company_logo} 
             alt="companyLogo"/>
         </div>
-        <div class="companyNameContainer">
+        <div className="companyNameContainer">
           <span>
-            Arc Refreshments Corp
+            {job.company_name}
           </span>
         </div>
       </div>
       <div>
-        <span class="jobUploaded">3 hours ago</span>
+        <span className="jobUploaded">{calculateHourDifference(job.refreshed_at)} hours ago</span>
       </div>
     </div>
     <hr/>

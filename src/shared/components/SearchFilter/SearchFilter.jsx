@@ -3,9 +3,7 @@ import './SearchFilter.css';
 
 const SearchFilter = () => (
   <div>
-    <button 
-      type="submit" 
-    >
+    <button type="submit">
       Filter Results
     </button>
   </div>

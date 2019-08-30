@@ -2,18 +2,16 @@ import React from 'react';
 import './JobList.css';
 import JobItem from '../JobItem';
 
-const JobList = () => (
+const JobList = ({ jobs, total }) => (
   <>
     <div id="jobCountContainer">
-      1231 jobs found
+      {total} jobs found
       <hr/>
     </div>
     <div>
-      <JobItem/>
-      <JobItem/>
-      <JobItem/>
-      <JobItem/>
-      <JobItem/>
+      {
+        jobs.map(job => <JobItem key={job.id} job={job} />)
+      }
     </div>
   </>
 );

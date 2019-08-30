@@ -7,6 +7,16 @@
   margin: 0 auto;
   background: #fff;
   min-height: 700px;
+  display: flex;
+  flex-direction: column;
 }
 
+hr {
+  border-color: #E3E3E3;
+  background-color: #E3E3E3;
+  color: #E3E3E3;
+  border: 0;
+  height: 1px;
+  margin: 20px 0px;
+}
 
