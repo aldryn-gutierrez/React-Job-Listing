@@ -1,0 +1,27 @@
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0px 30px 0px;
+}
+ 
+.searchIconContainer {
+  flex: 0.75 1 0%;
+}
+
+.searchIconContainer svg {
+  color: #3080EA
+}
+
+.searchInputContainer {
+  flex: 9.25
+}
+
+input {
+  width: 100%;
+  border-color: Transparent;
+  border: none;
+  font-weight: bolder;
+  background-color: #F9F9F9;
+  font-size: 14px;
+  outline: none;
+}

@@ -1,0 +1,11 @@
+#jobCountContainer {
+  margin: 20px 0px;
+}
+
+hr {
+  border-color: #E3E3E3;
+  background-color: #E3E3E3;
+  color: #E3E3E3;
+  border: 0;
+  height: 1px;
+}
