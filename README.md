@@ -1,4 +1,4 @@
-React Application displaying a Pacman Map
+React Application displaying a Job Listing
 
 Installation:
 
